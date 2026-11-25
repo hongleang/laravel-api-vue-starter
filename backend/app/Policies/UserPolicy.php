@@ -45,4 +45,12 @@ class UserPolicy
     {
         return ! $user->is($model) && $user->can(Permission::UsersUpdate->value);
     }
+
+    /**
+     * Running and exporting the user report.
+     */
+    public function report(User $user): bool
+    {
+        return $user->can(Permission::ReportsView->value);
+    }
 }

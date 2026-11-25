@@ -8,4 +8,5 @@ enum Permission: string
     case UsersCreate = 'users.create';
     case UsersUpdate = 'users.update';
     case UsersDelete = 'users.delete';
+    case ReportsView = 'reports.view';
 }

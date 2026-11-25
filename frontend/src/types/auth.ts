@@ -1,7 +1,11 @@
 export type Role = 'admin' | 'user';
 
 export type Permission =
-  'users.view' | 'users.create' | 'users.update' | 'users.delete';
+  | 'users.view'
+  | 'users.create'
+  | 'users.update'
+  | 'users.delete'
+  | 'reports.view';
 
 /** The signed-in user, from GET /api/user. */
 export interface CurrentUser {

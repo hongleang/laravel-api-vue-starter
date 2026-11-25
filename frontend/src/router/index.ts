@@ -80,6 +80,18 @@ const routes: RouteRecordRaw[] = [
     meta: { layout: 'app', auth: true, title: 'Preferences' }
   },
   {
+    path: '/reports',
+    name: 'reports',
+    component: () => import('@/pages/reports/Index.vue'),
+    meta: {
+      layout: 'app',
+      auth: true,
+      verified: true,
+      permission: 'reports.view',
+      title: 'User report'
+    }
+  },
+  {
     path: '/users',
     name: 'users.index',
     component: () => import('@/pages/users/Index.vue'),

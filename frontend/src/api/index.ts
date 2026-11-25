@@ -13,6 +13,10 @@ export const api = {
     `/api/email/verify/${encodeURIComponent(id)}/${encodeURIComponent(hash)}${query}`,
   profile: () => '/api/profile',
   profilePassword: () => '/api/profile/password',
+  reports: {
+    users: () => '/api/reports/users',
+    usersExport: () => '/api/reports/users/export'
+  },
   users: {
     index: () => '/api/users',
     store: () => '/api/users',

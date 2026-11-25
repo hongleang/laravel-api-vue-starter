@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\CurrentUserController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserReportController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('login', [AuthenticatedSessionController::class, 'store'])->name('login');
@@ -30,6 +31,9 @@ Route::middleware('auth:sanctum')->group(function (): void {
     Route::put('profile/password', [ProfileController::class, 'updatePassword'])->name('profile.password.update');
 
     Route::middleware('verified')->group(function (): void {
+        Route::get('reports/users', [UserReportController::class, 'index'])->name('reports.users.index');
+        Route::get('reports/users/export', [UserReportController::class, 'export'])->name('reports.users.export');
+
         Route::apiResource('users', UserController::class);
     });
 });

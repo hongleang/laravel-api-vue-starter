@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { LayoutDashboard, LayoutGrid, Settings, Users } from '@lucide/vue';
+import {
+  FileText,
+  LayoutDashboard,
+  LayoutGrid,
+  Settings,
+  Users
+} from '@lucide/vue';
 import { computed } from 'vue';
 
 import {
@@ -29,6 +35,12 @@ const allNavItems: NavItem[] = [
     href: { name: 'users.index' },
     icon: Users,
     permission: 'users.view'
+  },
+  {
+    title: 'Reports',
+    href: { name: 'reports' },
+    icon: FileText,
+    permission: 'reports.view'
   },
   { title: 'Settings', href: { name: 'profile.edit' }, icon: Settings }
 ];

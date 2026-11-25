@@ -18,7 +18,7 @@ class AuthenticationTest extends TestCase
             ->assertOk()
             ->assertJsonPath('data.id', $user->id)
             ->assertJsonPath('data.roles', ['admin'])
-            ->assertJsonPath('data.permissions', ['users.create', 'users.delete', 'users.update', 'users.view'])
+            ->assertJsonPath('data.permissions', ['reports.view', 'users.create', 'users.delete', 'users.update', 'users.view'])
             ->assertJsonMissingPath('data.password')
             ->assertJsonMissingPath('data.remember_token');
 
